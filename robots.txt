@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://us-mortgage-qualification-calc.enjoy-onepage.com/sitemap.xml
