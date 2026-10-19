@@ -584,9 +584,9 @@
   const valMonthlyPmiEl = document.getElementById('valMonthlyPmi');
 
   function calculate() {
-    const annualIncome = Math.max(1000, parseFloat(annualIncomeEl.value) || 0);
-    const downPayment = Math.max(0, parseFloat(downPaymentEl.value) || 0);
-    const monthlyDebt = Math.max(0, parseFloat(monthlyDebtEl.value) || 0);
+    const annualIncome = Math.max(1000, Math.max(0, parseFloat(annualIncomeEl.value) || 0));
+    const downPayment = Math.max(0, Math.max(0, parseFloat(downPaymentEl.value) || 0));
+    const monthlyDebt = Math.max(0, Math.max(0, parseFloat(monthlyDebtEl.value) || 0));
     const termYears = parseInt(loanTermYearsEl.value, 10) || 30;
     const annualRate = Math.max(0.1, parseFloat(interestRateEl.value) || 6.75) / 100;
     const tier = underwritingTierEl.value;
