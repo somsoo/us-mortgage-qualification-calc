@@ -1,28 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mortgage Pre-Approval Calculator - Under maintenance</title>
-<meta name="robots" content="noindex, nofollow">
-<meta name="site-status" content="maintenance">
-<meta name="description" content="This tool is temporarily offline while it is rebuilt.">
+<title>Mortgage Qualification Calc</title>
+<meta name="description" content="Calculate home loan pre-approval limits, maximum home price, and payments.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://us-mortgage-qualification-calc.enjoy-onepage.com/">
+<meta name="theme-color" content="#1e40af">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mortgage Qualification Calc">
+<meta property="og:title" content="Mortgage Qualification Calc">
+<meta property="og:description" content="Calculate home loan pre-approval limits, maximum home price, and payments.">
+<meta property="og:url" content="https://us-mortgage-qualification-calc.enjoy-onepage.com/">
+<meta property="og:image" content="https://us-mortgage-qualification-calc.enjoy-onepage.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mortgage Qualification Calc">
+<meta name="twitter:description" content="Calculate home loan pre-approval limits, maximum home price, and payments.">
+<meta name="twitter:image" content="https://us-mortgage-qualification-calc.enjoy-onepage.com/og-image.png">
+<link rel="alternate" type="application/rss+xml" title="Mortgage Qualification RSS" href="https://us-mortgage-qualification-calc.enjoy-onepage.com/rss.xml">
+<link rel="sitemap" type="application/xml" href="https://us-mortgage-qualification-calc.enjoy-onepage.com/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://us-mortgage-qualification-calc.enjoy-onepage.com/#webapp",
+      "name": "Mortgage Qualification Calc",
+      "url": "https://us-mortgage-qualification-calc.enjoy-onepage.com/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "inLanguage": "en",
+      "description": "Interactive home mortgage qualification calculator estimating maximum home purchase price, allowable loan amounts, and monthly PITI payments.",
+      "image": "https://us-mortgage-qualification-calc.enjoy-onepage.com/og-image.png",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://us-mortgage-qualification-calc.enjoy-onepage.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do mortgage lenders calculate maximum loan qualification?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lenders evaluate your gross monthly income, monthly recurring debt obligations, down payment, and credit score using front-end and back-end debt-to-income ratios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 28/36 qualifying rule for conventional mortgages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 28/36 rule recommends that your monthly housing expense not exceed 28 percent of gross income, and total debt payments not exceed 36 percent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does down payment size affect mortgage loan qualification?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A larger down payment increases your total purchase purchasing power, lowers monthly interest payments, and eliminates private mortgage insurance (PMI) if reaching 20 percent."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6946654760086847" crossorigin="anonymous"></script>
 <style>
-  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; }
-  main { max-width: 560px; margin: 12vh auto; padding: 32px 24px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; }
-  h1 { font-size: 1.4rem; margin: 0 0 12px; }
-  p { line-height: 1.6; color: #334155; }
-  a { color: #1d4ed8; font-weight: 600; }
-  .tag { display: inline-block; font-size: .8rem; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 999px; padding: 4px 10px; margin-bottom: 14px; }
+  :root {
+    --primary: #1e40af;
+    --primary-hover: #1e3a8a;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 16px;
+  }
+  .app-container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  header h1 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 8px;
+  }
+  header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 768px) {
+    .grid-layout { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .form-group {
+    margin-bottom: 16px;
+  }
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+  }
+  input[type="number"], select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fff;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  input[type="number"]:focus, select:focus {
+    border-color: var(--primary);
+  }
+  .row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .summary-banner {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    color: #ffffff;
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .summary-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .summary-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 6px 0;
+  }
+  .summary-sub {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+  .dual-stat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    background: #f1f5f9;
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .stat-card .v {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+  .stat-card .l {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .breakdown-table tr {
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .breakdown-table tr:last-child {
+    border-bottom: none;
+  }
+  .breakdown-table td {
+    padding: 10px 0;
+  }
+  .breakdown-table td.k {
+    color: var(--text-muted);
+  }
+  .breakdown-table td.v {
+    text-align: right;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+  .info-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .info-section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .info-grid { grid-template-columns: 1fr; }
+  }
+  .how-step {
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .how-step .step-num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .how-step h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .how-step p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .faq-item h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+  }
+  .faq-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 0 12px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+  footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  .toast.show { opacity: 1; }
 </style>
 </head>
 <body>
-<main>
-  <span class="tag">Under maintenance</span>
-  <h1>Mortgage Pre-Approval Calculator</h1>
-  <p>This tool is temporarily offline. We found that the previous version did not work the way it was described, so we took it down while we rebuild it properly.</p>
-  <p>Please check back later.</p>
-  <p><a href="https://enjoy-onepage.com/">Browse our other free tools</a></p>
-</main>
+
+<div class="app-container">
+  <header>
+    <h1>Mortgage Qualification Calc</h1>
+    <p>Calculate maximum qualifying home purchase price, loan pre-approval limits, and PITI payments</p>
+  </header>
+
+  <!-- ADSENSE START: top -->
+  <div class="manual-ad-box ad-top-banner" style="width: 100%; max-width: 960px; min-height: 100px; margin: 0 auto 20px; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 100px;"
+         data-ad-client="ca-pub-6946654760086847"
+         data-ad-slot="3824727725"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: top -->
+
+  <div class="grid-layout">
+    <!-- Controls Column -->
+    <section class="card">
+      <h2 class="card-title">Income & Financing Details</h2>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="annualIncome">Annual Household Income ($)</label>
+          <input type="number" id="annualIncome" value="120000" min="20000" step="5000">
+        </div>
+        <div class="form-group">
+          <label for="downPayment">Down Payment Saved ($)</label>
+          <input type="number" id="downPayment" value="60000" min="0" step="5000">
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="monthlyDebt">Monthly Debts (Car, Loans, Cards) ($)</label>
+          <input type="number" id="monthlyDebt" value="500" min="0" step="50">
+        </div>
+        <div class="form-group">
+          <label for="loanTermYears">Loan Term</label>
+          <select id="loanTermYears">
+            <option value="30" selected>30-Year Fixed Rate</option>
+            <option value="15">15-Year Fixed Rate</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="interestRate">Mortgage Interest Rate (%)</label>
+          <input type="number" id="interestRate" value="6.75" min="2.0" max="15.0" step="0.125">
+        </div>
+        <div class="form-group">
+          <label for="underwritingTier">Underwriting Benchmark</label>
+          <select id="underwritingTier">
+            <option value="conv" selected>Conventional (28% Front / 36% Back)</option>
+            <option value="fha">FHA (31% Front / 43% Back)</option>
+            <option value="va">VA (41% Total DTI Benchmark)</option>
+            <option value="agg">Aggressive (45% Max Allowable)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="propertyTaxRate">Annual Property Tax Rate (%)</label>
+          <input type="number" id="propertyTaxRate" value="1.2" min="0.2" max="3.5" step="0.1">
+        </div>
+        <div class="form-group">
+          <label for="homeInsuranceAnnual">Annual Homeowners Insurance ($)</label>
+          <input type="number" id="homeInsuranceAnnual" value="1400" min="400" step="100">
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Column -->
+    <section class="card">
+      <h2 class="card-title">Qualification & Max Purchase</h2>
+
+      <div class="summary-banner">
+        <div class="summary-title">Maximum Qualifying Home Price</div>
+        <div class="summary-value" id="valMaxHomePrice">$492,800</div>
+        <div class="summary-sub" id="valMaxLoanSub">Maximum Loan Pre-Approval: $432,800</div>
+      </div>
+
+      <div class="dual-stat">
+        <div class="stat-card">
+          <div class="v" id="valMaxPiti">$3,100 / mo</div>
+          <div class="l">Max Qualifying PITI Payment</div>
+        </div>
+        <div class="stat-card">
+          <div class="v" id="valDownPct">12.2%</div>
+          <div class="l">Down Payment Ratio</div>
+        </div>
+      </div>
+
+      <table class="breakdown-table">
+        <tbody>
+          <tr>
+            <td class="k">Gross Monthly Income:</td>
+            <td class="v" id="valMonthlyGross">$10,000.00 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Principal & Interest (P&I):</td>
+            <td class="v" id="valMonthlyPi">$2,805.24 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Estimated Property Taxes:</td>
+            <td class="v" id="valMonthlyTaxes">$492.80 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Homeowners Insurance:</td>
+            <td class="v" id="valMonthlyIns">$116.67 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Private Mortgage Insurance (PMI):</td>
+            <td class="v" id="valMonthlyPmi" style="color: #dc2626;">+$180.33 / mo (< 20% down)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <!-- ADSENSE START: mid -->
+  <div class="manual-ad-box ad-mid-banner" style="width: 100%; max-width: 960px; min-height: 250px; margin: 20px auto; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 250px;"
+         data-ad-client="ca-pub-6946654760086847"
+         data-ad-slot="1186914926"
+         data-ad-format="rectangle,horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: mid -->
+
+  <section class="info-section">
+    <h2>How Mortgage Qualification Works</h2>
+    <div class="info-grid">
+      <div class="how-step">
+        <span class="step-num">1</span>
+        <h3>DTI Evaluation</h3>
+        <p>Lenders restrict your maximum monthly mortgage payment so total debts stay within 36% to 45% of income.</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">2</span>
+        <h3>Full PITI Sum</h3>
+        <p>Approval amounts factor in principal, interest, local property taxes, homeowners insurance, and PMI.</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">3</span>
+        <h3>Down Payment Power</h3>
+        <p>Reaching a 20% down payment eliminates PMI entirely, reducing monthly fees and boosting pre-approval.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item"><h3>How do mortgage lenders calculate maximum loan qualification?</h3><p>Lenders evaluate your gross monthly income, monthly recurring debt obligations, down payment, and credit score using front-end and back-end debt-to-income ratios.</p></div>
+      <div class="faq-item"><h3>What is the 28/36 qualifying rule for conventional mortgages?</h3><p>The 28/36 rule recommends that your monthly housing expense not exceed 28 percent of gross income, and total debt payments not exceed 36 percent.</p></div>
+      <div class="faq-item"><h3>How does down payment size affect mortgage loan qualification?</h3><p>A larger down payment increases your total purchase purchasing power, lowers monthly interest payments, and eliminates private mortgage insurance (PMI) if reaching 20 percent.</p></div>
+    </div>
+  </section>
+
+  <!-- ADSENSE START: bottom -->
+  <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; min-height: 280px; margin: 24px auto 16px; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 280px;"
+         data-ad-client="ca-pub-6946654760086847"
+         data-ad-slot="3416334507"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: bottom -->
+
+  <div id="global-ux-toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer>
+    <p>&copy; 2026 Mortgage Qualification Calc. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="/privacy.html">Privacy Policy</a> &bull;
+      <a href="/terms.html">Terms of Service</a> &bull;
+      <a href="/disclaimer.html">Disclaimer</a>
+    </p>
+  </footer>
+</div>
+
+<!-- LOGIC START -->
+<script>
+(function() {
+  const annualIncomeEl = document.getElementById('annualIncome');
+  const downPaymentEl = document.getElementById('downPayment');
+  const monthlyDebtEl = document.getElementById('monthlyDebt');
+  const loanTermYearsEl = document.getElementById('loanTermYears');
+  const interestRateEl = document.getElementById('interestRate');
+  const underwritingTierEl = document.getElementById('underwritingTier');
+  const propertyTaxRateEl = document.getElementById('propertyTaxRate');
+  const homeInsuranceAnnualEl = document.getElementById('homeInsuranceAnnual');
+
+  const valMaxHomePriceEl = document.getElementById('valMaxHomePrice');
+  const valMaxLoanSubEl = document.getElementById('valMaxLoanSub');
+  const valMaxPitiEl = document.getElementById('valMaxPiti');
+  const valDownPctEl = document.getElementById('valDownPct');
+  const valMonthlyGrossEl = document.getElementById('valMonthlyGross');
+  const valMonthlyPiEl = document.getElementById('valMonthlyPi');
+  const valMonthlyTaxesEl = document.getElementById('valMonthlyTaxes');
+  const valMonthlyInsEl = document.getElementById('valMonthlyIns');
+  const valMonthlyPmiEl = document.getElementById('valMonthlyPmi');
+
+  function calculate() {
+    const annualIncome = Math.max(1000, parseFloat(annualIncomeEl.value) || 0);
+    const downPayment = Math.max(0, parseFloat(downPaymentEl.value) || 0);
+    const monthlyDebt = Math.max(0, parseFloat(monthlyDebtEl.value) || 0);
+    const termYears = parseInt(loanTermYearsEl.value, 10) || 30;
+    const annualRate = Math.max(0.1, parseFloat(interestRateEl.value) || 6.75) / 100;
+    const tier = underwritingTierEl.value;
+    const taxRate = Math.max(0, parseFloat(propertyTaxRateEl.value) || 1.2) / 100;
+    const annualIns = Math.max(0, parseFloat(homeInsuranceAnnualEl.value) || 1400);
+
+    const monthlyGross = annualIncome / 12;
+    const monthlyIns = annualIns / 12;
+
+    // Determine max allowable housing payment based on front/back ratios
+    let frontRatio = 0.28;
+    let backRatio = 0.36;
+    if (tier === 'fha') {
+      frontRatio = 0.31;
+      backRatio = 0.43;
+    } else if (tier === 'va') {
+      frontRatio = 0.41;
+      backRatio = 0.41;
+    } else if (tier === 'agg') {
+      frontRatio = 0.45;
+      backRatio = 0.45;
+    }
+
+    const maxHousingByFront = monthlyGross * frontRatio;
+    const maxHousingByBack = Math.max(0, (monthlyGross * backRatio) - monthlyDebt);
+    const maxPITI = Math.min(maxHousingByFront, maxHousingByBack);
+
+    // Monthly interest factor for loan amortization: M = P * [r(1+r)^n] / [(1+r)^n - 1]
+    const r = annualRate / 12;
+    const n = termYears * 12;
+    const monthlyMortgageFactor = (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+    // Iterative solve for purchase price where P&I + Tax + Insurance + PMI = maxPITI
+    let lowPrice = downPayment;
+    let highPrice = downPayment + (maxPITI / monthlyMortgageFactor);
+    let bestPrice = lowPrice;
+
+    for (let iter = 0; iter < 40; iter++) {
+      const testPrice = (lowPrice + highPrice) / 2;
+      const testLoan = Math.max(0, testPrice - downPayment);
+      const testPI = testLoan * monthlyMortgageFactor;
+      const testTax = (testPrice * taxRate) / 12;
+      const downPct = testPrice > 0 ? (downPayment / testPrice) : 1;
+      const testPmi = (downPct < 0.20 && testLoan > 0) ? (testLoan * 0.005) / 12 : 0;
+      const totalPayment = testPI + testTax + monthlyIns + testPmi;
+
+      if (totalPayment <= maxPITI) {
+        bestPrice = testPrice;
+        lowPrice = testPrice;
+      } else {
+        highPrice = testPrice;
+      }
+    }
+
+    const finalLoan = Math.max(0, bestPrice - downPayment);
+    const finalPI = finalLoan * monthlyMortgageFactor;
+    const finalTax = (bestPrice * taxRate) / 12;
+    const finalDownPct = bestPrice > 0 ? (downPayment / bestPrice) * 100 : 0;
+    const finalPmi = (finalDownPct < 20 && finalLoan > 0) ? (finalLoan * 0.005) / 12 : 0;
+
+    valMaxHomePriceEl.textContent = '$' + Math.round(bestPrice).toLocaleString('en-US');
+    valMaxLoanSubEl.textContent = `Maximum Loan Pre-Approval: $${Math.round(finalLoan).toLocaleString('en-US')}`;
+
+    valMaxPitiEl.textContent = '$' + Math.round(maxPITI).toLocaleString('en-US') + ' / mo';
+    valDownPctEl.textContent = `${finalDownPct.toFixed(1)}%`;
+
+    valMonthlyGrossEl.textContent = '$' + monthlyGross.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+    valMonthlyPiEl.textContent = '$' + finalPI.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+    valMonthlyTaxesEl.textContent = '$' + finalTax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+    valMonthlyInsEl.textContent = '$' + monthlyIns.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+
+    if (finalPmi > 0) {
+      valMonthlyPmiEl.style.color = '#dc2626';
+      valMonthlyPmiEl.textContent = '+$' + finalPmi.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo (< 20% down)';
+    } else {
+      valMonthlyPmiEl.style.color = '#059669';
+      valMonthlyPmiEl.textContent = '$0.00 (PMI waived >= 20% down)';
+    }
+  }
+
+  [annualIncomeEl, downPaymentEl, monthlyDebtEl, loanTermYearsEl, interestRateEl, underwritingTierEl, propertyTaxRateEl, homeInsuranceAnnualEl].forEach(el => {
+    el.addEventListener('input', calculate);
+  });
+
+  calculate();
+})();
+</script>
+<!-- LOGIC END -->
+
 </body>
 </html>
