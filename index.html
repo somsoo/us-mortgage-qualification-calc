@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE:HEAD START -->
 <title>Mortgage Qualification Calc</title>
 <meta name="description" content="Calculate home loan pre-approval limits, maximum home price, and payments.">
 <meta name="robots" content="index, follow">
@@ -71,6 +72,7 @@
   ]
 }
 </script>
+<!-- PAGE:HEAD END -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
 <style>
   :root {
@@ -368,15 +370,153 @@
     outline: 2px solid #2563eb !important;
     outline-offset: 2px !important;
   }
+  /* Remodel custom components */
+  .extra-section {
+    margin: 24px 0;
+  }
+  .extra-table-wrap {
+    width: 100%;
+    margin: 14px 0;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .extra-table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.70rem;
+    line-height: 1.35;
+    text-align: right;
+  }
+  .extra-table th, .extra-table td {
+    padding: 6px 2px;
+    border-bottom: 1px solid var(--border);
+    word-break: break-word;
+    box-sizing: border-box;
+    letter-spacing: -0.01em;
+  }
+  .extra-table th {
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 700;
+    text-align: center;
+  }
+  .extra-table th:first-child, .extra-table td:first-child {
+    text-align: left;
+    padding-left: 5px;
+    font-weight: 600;
+  }
+  .extra-table th:last-child, .extra-table td:last-child {
+    padding-right: 5px;
+  }
+  .extra-table tr:last-child td {
+    border-bottom: none;
+  }
+  .extra-table tr:hover td {
+    background: #f8fafc;
+  }
+  .checkpoints-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .checkpoints-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+  .checkpoints-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .checkpoints-list li {
+    font-size: 0.88rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+  .checkpoints-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #10b981;
+    font-weight: 700;
+  }
+  .checkpoints-list strong {
+    color: #0f172a;
+  }
+  .sublinks-section {
+    margin: 24px 0;
+  }
+  .sublinks-section h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--text-main);
+  }
+  .sublinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .sublinks-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .sublinks-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+  .sublink-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sublink-item {
+    display: block;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 0.86rem;
+    padding: 7px 10px;
+    border-radius: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: background 0.15s, border-color 0.15s;
+    line-height: 1.4;
+  }
+  .sublink-item:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #1e40af;
+  }
 </style>
 </head>
 <body>
 
 <div class="app-container">
+  <!-- PAGE:HERO START -->
   <header>
     <h1>Mortgage Qualification Calc</h1>
     <p>Calculate maximum qualifying home purchase price, loan pre-approval limits, and PITI payments</p>
   </header>
+  <!-- PAGE:HERO END -->
 
   <!-- ADSENSE START: top -->
   <div class="manual-ad-box ad-top-banner" style="width: 100%; max-width: 960px; min-height: 100px; margin: 0 auto 20px; text-align: center; background: transparent;">
@@ -454,17 +594,17 @@
 
       <div class="summary-banner">
         <div class="summary-title">Maximum Qualifying Home Price</div>
-        <div class="summary-value" id="valMaxHomePrice">$492,800</div>
-        <div class="summary-sub" id="valMaxLoanSub">Maximum Loan Pre-Approval: $432,800</div>
+        <div class="summary-value" id="valMaxHomePrice">$391,956</div>
+        <div class="summary-sub" id="valMaxLoanSub">Maximum Loan Pre-Approval: $331,956</div>
       </div>
 
       <div class="dual-stat">
         <div class="stat-card">
-          <div class="v" id="valMaxPiti">$3,100 / mo</div>
+          <div class="v" id="valMaxPiti">$2,800 / mo</div>
           <div class="l">Max Qualifying PITI Payment</div>
         </div>
         <div class="stat-card">
-          <div class="v" id="valDownPct">12.2%</div>
+          <div class="v" id="valDownPct">15.3%</div>
           <div class="l">Down Payment Ratio</div>
         </div>
       </div>
@@ -477,11 +617,11 @@
           </tr>
           <tr>
             <td class="k">Principal & Interest (P&I):</td>
-            <td class="v" id="valMonthlyPi">$2,805.24 / mo</td>
+            <td class="v" id="valMonthlyPi">$2,153.06 / mo</td>
           </tr>
           <tr>
             <td class="k">Estimated Property Taxes:</td>
-            <td class="v" id="valMonthlyTaxes">$492.80 / mo</td>
+            <td class="v" id="valMonthlyTaxes">$391.96 / mo</td>
           </tr>
           <tr>
             <td class="k">Homeowners Insurance:</td>
@@ -489,12 +629,42 @@
           </tr>
           <tr>
             <td class="k">Private Mortgage Insurance (PMI):</td>
-            <td class="v" id="valMonthlyPmi" style="color: #dc2626;">+$180.33 / mo (< 20% down)</td>
+            <td class="v" id="valMonthlyPmi" style="color: #dc2626;">+$138.32 / mo (< 20% down)</td>
           </tr>
         </tbody>
       </table>
     </section>
   </div>
+
+  <!-- PAGE:EXTRA START --><!-- PAGE:EXTRA END -->
+
+  <!-- PAGE:SUBLINKS START -->
+  <section class="sublinks-section">
+    <h2>Explore Mortgage Qualification Scenarios & Guidelines</h2>
+    <div class="sublinks-grid">
+      <div class="sublinks-card">
+        <h3>📊 Mortgage Pre-Approval by Household Income</h3>
+        <div class="sublink-list">
+          <a class="sublink-item" href="/income-60k.html">$60,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-80k.html">$80,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-100k.html">$100,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-120k.html">$120,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-150k.html">$150,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-200k.html">$200,000 Income (Max Home Price & PITI)</a>
+        </div>
+      </div>
+      <div class="sublinks-card">
+        <h3>📌 Underwriting DTI Rules, FHA/VA & 20% Down Guides</h3>
+        <div class="sublink-list">
+          <a class="sublink-item" href="/fha-vs-conventional.html">FHA (31/43 DTI) vs Conventional (28/36 DTI)</a>
+          <a class="sublink-item" href="/va-loan-qualification.html">VA Loan Qualification ($0 Down • 41% DTI)</a>
+          <a class="sublink-item" href="/guide-28-36-dti-rule.html">28/36 Qualifying DTI Rule & Debt Impact</a>
+          <a class="sublink-item" href="/guide-20-down-pmi.html">20% Down Payment & PMI Elimination Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PAGE:SUBLINKS END -->
   <!-- ADSENSE START: mid -->
   <div class="manual-ad-box ad-mid-banner" style="width: 100%; max-width: 960px; min-height: 250px; margin: 20px auto; text-align: center; background: transparent;">
     <ins class="adsbygoogle"
@@ -531,9 +701,11 @@
   <section class="info-section">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-list">
+      <!-- PAGE:FAQ START -->
       <div class="faq-item"><h3>How do mortgage lenders calculate maximum loan qualification?</h3><p>Lenders evaluate your gross monthly income, monthly recurring debt obligations, down payment, and credit score using front-end and back-end debt-to-income ratios.</p></div>
       <div class="faq-item"><h3>What is the 28/36 qualifying rule for conventional mortgages?</h3><p>The 28/36 rule recommends that your monthly housing expense not exceed 28 percent of gross income, and total debt payments not exceed 36 percent.</p></div>
       <div class="faq-item"><h3>How does down payment size affect mortgage loan qualification?</h3><p>A larger down payment increases your total purchase purchasing power, lowers monthly interest payments, and eliminates private mortgage insurance (PMI) if reaching 20 percent.</p></div>
+      <!-- PAGE:FAQ END -->
     </div>
   </section>
 

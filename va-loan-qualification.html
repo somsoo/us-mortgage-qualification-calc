@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE:HEAD START -->
+<title>VA Loan Qualification Calc (41% DTI)</title>
+<meta name="description" content="Calculate $0 down VA mortgage qualification limits using the 41% DTI benchmark.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://us-mortgage-qualification-calc.enjoy-onepage.com/va-loan-qualification.html">
+<meta name="theme-color" content="#1e40af">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mortgage Qualification Calc">
+<meta property="og:title" content="VA Loan Qualification Calc (41% DTI)">
+<meta property="og:description" content="Calculate $0 down VA mortgage qualification limits using the 41% DTI benchmark.">
+<meta property="og:url" content="https://us-mortgage-qualification-calc.enjoy-onepage.com/va-loan-qualification.html">
+<meta property="og:image" content="https://us-mortgage-qualification-calc.enjoy-onepage.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VA Loan Qualification Calc (41% DTI)">
+<meta name="twitter:description" content="Calculate $0 down VA mortgage qualification limits using the 41% DTI benchmark.">
+<meta name="twitter:image" content="https://us-mortgage-qualification-calc.enjoy-onepage.com/og-image.png">
+<link rel="alternate" type="application/rss+xml" title="Mortgage Qualification RSS" href="https://us-mortgage-qualification-calc.enjoy-onepage.com/rss.xml">
+<link rel="sitemap" type="application/xml" href="https://us-mortgage-qualification-calc.enjoy-onepage.com/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://us-mortgage-qualification-calc.enjoy-onepage.com/va-loan-qualification.html#webapp",
+      "name": "VA Loan Qualification Calc (41% DTI)",
+      "url": "https://us-mortgage-qualification-calc.enjoy-onepage.com/va-loan-qualification.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "inLanguage": "en",
+      "description": "Calculate $0 down VA mortgage qualification limits using the 41% DTI benchmark.",
+      "image": "https://us-mortgage-qualification-calc.enjoy-onepage.com/og-image.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://us-mortgage-qualification-calc.enjoy-onepage.com/va-loan-qualification.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does VA loan mortgage qualification differ from Conventional loans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VA loans require 0% down payment, charge no monthly private mortgage insurance (PMI), and use a flexible 41% total DTI benchmark alongside residual income requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is eligible for VA home loan financing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Active-duty service members, veterans, and qualifying surviving spouses who meet minimum service length requirements and obtain a Certificate of Eligibility (COE) from the VA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the VA residual income requirement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The VA requires borrowers to retain a minimum amount of discretionary cash each month after covering PITI and recurring debts to pay for food, utilities, and living expenses."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- PAGE:HEAD END -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
+<style>
+  :root {
+    --primary: #1e40af;
+    --primary-hover: #1e3a8a;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 16px;
+  }
+  .app-container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  header h1 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 8px;
+  }
+  header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 768px) {
+    .grid-layout { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .form-group {
+    margin-bottom: 16px;
+  }
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+  }
+  input[type="number"], select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fff;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  input[type="number"]:focus, select:focus {
+    border-color: var(--primary);
+  }
+  .row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .summary-banner {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    color: #ffffff;
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .summary-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .summary-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 6px 0;
+  }
+  .summary-sub {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+  .dual-stat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    background: #f1f5f9;
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .stat-card .v {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+  .stat-card .l {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .breakdown-table tr {
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .breakdown-table tr:last-child {
+    border-bottom: none;
+  }
+  .breakdown-table td {
+    padding: 10px 0;
+  }
+  .breakdown-table td.k {
+    color: var(--text-muted);
+  }
+  .breakdown-table td.v {
+    text-align: right;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+  .info-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .info-section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .info-grid { grid-template-columns: 1fr; }
+  }
+  .how-step {
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .how-step .step-num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .how-step h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .how-step p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .faq-item h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+  }
+  .faq-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 0 12px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+  footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  .toast.show { opacity: 1; }
+</style>
+<script id="math-guard">
+// Global Math & DOM Output Guard: prevents NaN / Infinity leaks to UI
+(function() {
+  const origToLocaleString = Number.prototype.toLocaleString;
+  Number.prototype.toLocaleString = function(locales, options) {
+    if (!Number.isFinite(this.valueOf())) return '0';
+    return origToLocaleString.call(this, locales, options);
+  };
+  const origToFixed = Number.prototype.toFixed;
+  Number.prototype.toFixed = function(digits) {
+    if (!Number.isFinite(this.valueOf())) return '0';
+    return origToFixed.call(this, digits);
+  };
+})();
+</script>
+<style id="ad-cls-shield">
+  .ad-bottom { min-height: 280px !important; }
+  .ad-bottom ins { min-height: 280px !important; }
+</style>
+<style id="global-quality-shield">
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  .ad-bottom, .ad-bottom ins {
+    min-height: 280px !important;
+    background: transparent !important;
+  }
+  :focus-visible {
+    outline: 2px solid #2563eb !important;
+    outline-offset: 2px !important;
+  }
+  /* Remodel custom components */
+  .extra-section {
+    margin: 24px 0;
+  }
+  .extra-table-wrap {
+    width: 100%;
+    margin: 14px 0;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .extra-table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.70rem;
+    line-height: 1.35;
+    text-align: right;
+  }
+  .extra-table th, .extra-table td {
+    padding: 6px 2px;
+    border-bottom: 1px solid var(--border);
+    word-break: break-word;
+    box-sizing: border-box;
+    letter-spacing: -0.01em;
+  }
+  .extra-table th {
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 700;
+    text-align: center;
+  }
+  .extra-table th:first-child, .extra-table td:first-child {
+    text-align: left;
+    padding-left: 5px;
+    font-weight: 600;
+  }
+  .extra-table th:last-child, .extra-table td:last-child {
+    padding-right: 5px;
+  }
+  .extra-table tr:last-child td {
+    border-bottom: none;
+  }
+  .extra-table tr:hover td {
+    background: #f8fafc;
+  }
+  .checkpoints-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .checkpoints-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+  .checkpoints-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .checkpoints-list li {
+    font-size: 0.88rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+  .checkpoints-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #10b981;
+    font-weight: 700;
+  }
+  .checkpoints-list strong {
+    color: #0f172a;
+  }
+  .sublinks-section {
+    margin: 24px 0;
+  }
+  .sublinks-section h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--text-main);
+  }
+  .sublinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .sublinks-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .sublinks-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+  .sublink-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sublink-item {
+    display: block;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 0.86rem;
+    padding: 7px 10px;
+    border-radius: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: background 0.15s, border-color 0.15s;
+    line-height: 1.4;
+  }
+  .sublink-item:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #1e40af;
+  }
+</style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- PAGE:HERO START -->
+  <header>
+    <h1>VA Loan Qualification Calc (41% DTI)</h1>
+    <p>Calculate $0 down VA mortgage qualification limits using the 41% DTI guideline</p>
+  </header>
+  <!-- PAGE:HERO END -->
+
+  <!-- ADSENSE START: top -->
+  <div class="manual-ad-box ad-top-banner" style="width: 100%; max-width: 960px; min-height: 100px; margin: 0 auto 20px; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 100px;"
+         data-ad-client="ca-pub-2228289204702106"
+         data-ad-slot="3824727725"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: top -->
+
+  <div class="grid-layout">
+    <!-- Controls Column -->
+    <section class="card">
+      <h2 class="card-title">Income & Financing Details</h2>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="annualIncome">Annual Household Income ($)</label>
+          <input type="number" id="annualIncome" value="95000" min="20000" step="5000" inputmode="numeric">
+        </div>
+        <div class="form-group">
+          <label for="downPayment">Down Payment Saved ($)</label>
+          <input type="number" id="downPayment" value="0" min="0" step="5000" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="monthlyDebt">Monthly Debts (Car, Loans, Cards) ($)</label>
+          <input type="number" id="monthlyDebt" value="500" min="0" step="50" inputmode="numeric">
+        </div>
+        <div class="form-group">
+          <label for="loanTermYears">Loan Term</label>
+          <select id="loanTermYears">
+            <option value="30" selected>30-Year Fixed Rate</option>
+            <option value="15">15-Year Fixed Rate</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="interestRate">Mortgage Interest Rate (%)</label>
+          <input type="number" id="interestRate" value="6.25" min="2.0" max="15.0" step="0.125" inputmode="numeric">
+        </div>
+        <div class="form-group">
+          <label for="underwritingTier">Underwriting Benchmark</label>
+          <select id="underwritingTier">
+            <option value="conv">Conventional (28% Front / 36% Back)</option>
+            <option value="fha">FHA (31% Front / 43% Back)</option>
+            <option value="va" selected>VA (41% Total DTI Benchmark)</option>
+            <option value="agg">Aggressive (45% Max Allowable)</option>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label for="propertyTaxRate">Annual Property Tax Rate (%)</label>
+          <input type="number" id="propertyTaxRate" value="1.2" min="0.2" max="3.5" step="0.1" inputmode="numeric">
+        </div>
+        <div class="form-group">
+          <label for="homeInsuranceAnnual">Annual Homeowners Insurance ($)</label>
+          <input type="number" id="homeInsuranceAnnual" value="1400" min="400" step="100" inputmode="numeric">
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Column -->
+    <section class="card">
+      <h2 class="card-title">Qualification & Max Purchase</h2>
+
+      <div class="summary-banner">
+        <div class="summary-title">Maximum Qualifying Home Price</div>
+        <div class="summary-value" id="valMaxHomePrice">$347,138</div>
+        <div class="summary-sub" id="valMaxLoanSub">Maximum Loan Pre-Approval: $347,138</div>
+      </div>
+
+      <div class="dual-stat">
+        <div class="stat-card">
+          <div class="v" id="valMaxPiti">$2,746 / mo</div>
+          <div class="l">Max Qualifying PITI Payment</div>
+        </div>
+        <div class="stat-card">
+          <div class="v" id="valDownPct">0.0%</div>
+          <div class="l">Down Payment Ratio</div>
+        </div>
+      </div>
+
+      <table class="breakdown-table">
+        <tbody>
+          <tr>
+            <td class="k">Gross Monthly Income:</td>
+            <td class="v" id="valMonthlyGross">$7,916.67 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Principal & Interest (P&I):</td>
+            <td class="v" id="valMonthlyPi">$2,137.39 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Estimated Property Taxes:</td>
+            <td class="v" id="valMonthlyTaxes">$347.14 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Homeowners Insurance:</td>
+            <td class="v" id="valMonthlyIns">$116.67 / mo</td>
+          </tr>
+          <tr>
+            <td class="k">Private Mortgage Insurance (PMI):</td>
+            <td class="v" id="valMonthlyPmi" style="color: #dc2626;">+$144.64 / mo (< 20% down)< 20% down)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- PAGE:EXTRA START -->
+  <section class="extra-section">
+    <h2 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 10px;">Mortgage Pre-Approval Comparison by Tier & Income</h2>
+    <div class="extra-table-wrap">
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th style="width: 20%;">Gross Income</th>
+            <th style="width: 20%;">Conv (28/36)</th>
+            <th style="width: 20%;">FHA (31/43)</th>
+            <th style="width: 20%;">VA (41% DTI)</th>
+            <th style="width: 20%;">Max PITI (Conv)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$60,000</td>
+            <td>$156,240</td>
+            <td>$189,248</td>
+            <td>$189,248</td>
+            <td>$1,300</td>
+          </tr>
+          <tr>
+            <td>$80,000</td>
+            <td>$231,059</td>
+            <td>$257,465</td>
+            <td>$279,471</td>
+            <td>$1,867</td>
+          </tr>
+          <tr>
+            <td>$100,000</td>
+            <td>$292,674</td>
+            <td>$325,682</td>
+            <td>$369,694</td>
+            <td>$2,333</td>
+          </tr>
+          <tr>
+            <td>$120,000</td>
+            <td>$354,290</td>
+            <td>$393,900</td>
+            <td>$459,916</td>
+            <td>$2,800</td>
+          </tr>
+          <tr>
+            <td>$150,000</td>
+            <td>$446,713</td>
+            <td>$496,226</td>
+            <td>$595,251</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>$200,000</td>
+            <td>$600,752</td>
+            <td>$666,769</td>
+            <td>$820,808</td>
+            <td>$4,667</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="checkpoints-card">
+      <h3>Key Fannie Mae, HUD/FHA & CFPB Underwriting Checkpoints</h3>
+      <ul class="checkpoints-list">
+        <li><strong>Fannie Mae Selling Guide (B3-6-02) & QM Rules:</strong> Conventional loans establish baseline qualifying limits of 28% front-end and 36% back-end DTI, extendable up to 45%–50% with automated underwriting compensating factors.</li>
+        <li><strong>HUD Handbook 4000.1 (FHA Underwriting):</strong> FHA financing expands accessibility with higher 31% front-end and 43% back-end benchmarks with down payments as low as 3.5%.</li>
+        <li><strong>Homeowners Protection Act (12 U.S.C. § 4901):</strong> Private mortgage insurance (PMI) is legally cancellable at 80% LTV and automatically terminates at 78% LTV, saving hundreds monthly.</li>
+      </ul>
+    </div>
+  </section>
+  <!-- PAGE:EXTRA END -->
+
+  <!-- PAGE:SUBLINKS START -->
+  <section class="sublinks-section">
+    <h2>Explore Mortgage Qualification Scenarios & Guidelines</h2>
+    <div class="sublinks-grid">
+      <div class="sublinks-card">
+        <h3>📊 Mortgage Pre-Approval by Household Income</h3>
+        <div class="sublink-list">
+          <a class="sublink-item" href="/income-60k.html">$60,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-80k.html">$80,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-100k.html">$100,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-120k.html">$120,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-150k.html">$150,000 Income (Max Home Price & PITI)</a>
+          <a class="sublink-item" href="/income-200k.html">$200,000 Income (Max Home Price & PITI)</a>
+        </div>
+      </div>
+      <div class="sublinks-card">
+        <h3>📌 Underwriting DTI Rules, FHA/VA & 20% Down Guides</h3>
+        <div class="sublink-list">
+          <a class="sublink-item" href="/fha-vs-conventional.html">FHA (31/43 DTI) vs Conventional (28/36 DTI)</a>
+          <a class="sublink-item" href="/va-loan-qualification.html">VA Loan Qualification ($0 Down • 41% DTI)</a>
+          <a class="sublink-item" href="/guide-28-36-dti-rule.html">28/36 Qualifying DTI Rule & Debt Impact</a>
+          <a class="sublink-item" href="/guide-20-down-pmi.html">20% Down Payment & PMI Elimination Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PAGE:SUBLINKS END -->
+  <!-- ADSENSE START: mid -->
+  <div class="manual-ad-box ad-mid-banner" style="width: 100%; max-width: 960px; min-height: 250px; margin: 20px auto; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 250px;"
+         data-ad-client="ca-pub-2228289204702106"
+         data-ad-slot="1186914926"
+         data-ad-format="rectangle,horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: mid -->
+
+  <section class="info-section">
+    <h2>How Mortgage Qualification Works</h2>
+    <div class="info-grid">
+      <div class="how-step">
+        <span class="step-num">1</span>
+        <h3>DTI Evaluation</h3>
+        <p>Lenders restrict your maximum monthly mortgage payment so total debts stay within 36% to 45% of income.</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">2</span>
+        <h3>Full PITI Sum</h3>
+        <p>Approval amounts factor in principal, interest, local property taxes, homeowners insurance, and PMI.</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">3</span>
+        <h3>Down Payment Power</h3>
+        <p>Reaching a 20% down payment eliminates PMI entirely, reducing monthly fees and boosting pre-approval.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <!-- PAGE:FAQ START -->
+      <div class="faq-item"><h3>How does VA loan mortgage qualification differ from Conventional loans?</h3><p>VA loans require 0% down payment, charge no monthly private mortgage insurance (PMI), and use a flexible 41% total DTI benchmark alongside residual income requirements.</p></div>
+      <div class="faq-item"><h3>Who is eligible for VA home loan financing?</h3><p>Active-duty service members, veterans, and qualifying surviving spouses who meet minimum service length requirements and obtain a Certificate of Eligibility (COE) from the VA.</p></div>
+      <div class="faq-item"><h3>What is the VA residual income requirement?</h3><p>The VA requires borrowers to retain a minimum amount of discretionary cash each month after covering PITI and recurring debts to pay for food, utilities, and living expenses.</p></div>
+      <!-- PAGE:FAQ END -->
+    </div>
+  </section>
+
+  <!-- ADSENSE START: bottom -->
+  <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; min-height: 280px; margin: 24px auto 16px; text-align: center; background: transparent;min-height:280px;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 280px;"
+         data-ad-client="ca-pub-2228289204702106"
+         data-ad-slot="3416334507"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: bottom -->
+
+  <div id="global-ux-toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer>
+    <p>&copy; 2026 Mortgage Qualification Calc. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="/privacy.html">Privacy Policy</a> &bull;
+      <a href="/terms.html">Terms of Service</a> &bull;
+      <a href="/disclaimer.html">Disclaimer</a>
+    </p>
+  </footer>
+</div>
+
+<!-- LOGIC START -->
+<script>
+(function() {
+  const annualIncomeEl = document.getElementById('annualIncome');
+  const downPaymentEl = document.getElementById('downPayment');
+  const monthlyDebtEl = document.getElementById('monthlyDebt');
+  const loanTermYearsEl = document.getElementById('loanTermYears');
+  const interestRateEl = document.getElementById('interestRate');
+  const underwritingTierEl = document.getElementById('underwritingTier');
+  const propertyTaxRateEl = document.getElementById('propertyTaxRate');
+  const homeInsuranceAnnualEl = document.getElementById('homeInsuranceAnnual');
+
+  const valMaxHomePriceEl = document.getElementById('valMaxHomePrice');
+  const valMaxLoanSubEl = document.getElementById('valMaxLoanSub');
+  const valMaxPitiEl = document.getElementById('valMaxPiti');
+  const valDownPctEl = document.getElementById('valDownPct');
+  const valMonthlyGrossEl = document.getElementById('valMonthlyGross');
+  const valMonthlyPiEl = document.getElementById('valMonthlyPi');
+  const valMonthlyTaxesEl = document.getElementById('valMonthlyTaxes');
+  const valMonthlyInsEl = document.getElementById('valMonthlyIns');
+  const valMonthlyPmiEl = document.getElementById('valMonthlyPmi');
+
+  function calculate() {
+    const annualIncome = Math.max(1000, Math.max(0, parseFloat(annualIncomeEl.value) || 0));
+    const downPayment = Math.max(0, Math.max(0, parseFloat(downPaymentEl.value) || 0));
+    const monthlyDebt = Math.max(0, Math.max(0, parseFloat(monthlyDebtEl.value) || 0));
+    const termYears = parseInt(loanTermYearsEl.value, 10) || 30;
+    const annualRate = Math.max(0.1, parseFloat(interestRateEl.value) || 6.75) / 100;
+    const tier = underwritingTierEl.value;
+    const taxRate = Math.max(0, parseFloat(propertyTaxRateEl.value) || 1.2) / 100;
+    const annualIns = Math.max(0, parseFloat(homeInsuranceAnnualEl.value) || 1400);
+
+    const monthlyGross = annualIncome / 12;
+    const monthlyIns = annualIns / 12;
+
+    // Determine max allowable housing payment based on front/back ratios
+    let frontRatio = 0.28;
+    let backRatio = 0.36;
+    if (tier === 'fha') {
+      frontRatio = 0.31;
+      backRatio = 0.43;
+    } else if (tier === 'va') {
+      frontRatio = 0.41;
+      backRatio = 0.41;
+    } else if (tier === 'agg') {
+      frontRatio = 0.45;
+      backRatio = 0.45;
+    }
+
+    const maxHousingByFront = monthlyGross * frontRatio;
+    const maxHousingByBack = Math.max(0, (monthlyGross * backRatio) - monthlyDebt);
+    const maxPITI = Math.min(maxHousingByFront, maxHousingByBack);
+
+    // Monthly interest factor for loan amortization: M = P * [r(1+r)^n] / [(1+r)^n - 1]
+    const r = annualRate / 12;
+    const n = termYears * 12;
+    const monthlyMortgageFactor = (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+    // Iterative solve for purchase price where P&I + Tax + Insurance + PMI = maxPITI
+    let lowPrice = downPayment;
+    let highPrice = downPayment + (maxPITI / monthlyMortgageFactor);
+    let bestPrice = lowPrice;
+
+    for (let iter = 0; iter < 40; iter++) {
+      const testPrice = (lowPrice + highPrice) / 2;
+      const testLoan = Math.max(0, testPrice - downPayment);
+      const testPI = testLoan * monthlyMortgageFactor;
+      const testTax = (testPrice * taxRate) / 12;
+      const downPct = testPrice > 0 ? (downPayment / testPrice) : 1;
+      const testPmi = (downPct < 0.20 && testLoan > 0) ? (testLoan * 0.005) / 12 : 0;
+      const totalPayment = testPI + testTax + monthlyIns + testPmi;
+
+      if (totalPayment <= maxPITI) {
+        bestPrice = testPrice;
+        lowPrice = testPrice;
+      } else {
+        highPrice = testPrice;
+      }
+    }
+
+    const finalLoan = Math.max(0, bestPrice - downPayment);
+    const finalPI = finalLoan * monthlyMortgageFactor;
+    const finalTax = (bestPrice * taxRate) / 12;
+    const finalDownPct = bestPrice > 0 ? (downPayment / bestPrice) * 100 : 0;
+    const finalPmi = (finalDownPct < 20 && finalLoan > 0) ? (finalLoan * 0.005) / 12 : 0;
+
+    valMaxHomePriceEl.textContent = '$' + Math.round(bestPrice).toLocaleString('en-US');
+    valMaxLoanSubEl.textContent = `Maximum Loan Pre-Approval: $${Math.round(finalLoan).toLocaleString('en-US')}`;
+
+    valMaxPitiEl.textContent = '$' + Math.round(maxPITI).toLocaleString('en-US') + ' / mo';
+    valDownPctEl.textContent = `${finalDownPct.toFixed(1)}%`;
+
+    valMonthlyGrossEl.textContent = '$' + monthlyGross.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+    valMonthlyPiEl.textContent = '$' + finalPI.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+    valMonthlyTaxesEl.textContent = '$' + finalTax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+    valMonthlyInsEl.textContent = '$' + monthlyIns.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+
+    if (finalPmi > 0) {
+      valMonthlyPmiEl.style.color = '#dc2626';
+      valMonthlyPmiEl.textContent = '+$' + finalPmi.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo (< 20% down)';
+    } else {
+      valMonthlyPmiEl.style.color = '#059669';
+      valMonthlyPmiEl.textContent = '$0.00 (PMI waived >= 20% down)';
+    }
+  }
+
+  [annualIncomeEl, downPaymentEl, monthlyDebtEl, loanTermYearsEl, interestRateEl, underwritingTierEl, propertyTaxRateEl, homeInsuranceAnnualEl].forEach(el => {
+    el.addEventListener('input', calculate);
+  });
+
+  calculate();
+})();
+</script>
+<!-- LOGIC END -->
+
+</body>
+</html>

@@ -1,32 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>Mortgage Qualification Calc</title>
-  <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/</link>
-  <description>Calculate home loan pre-approval limits, maximum home price, and payments.</description>
-  <language>en-us</language>
-  <atom:link href="https://us-mortgage-qualification-calc.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Mon, 19 Oct 2026 02:53:43 +0000</lastBuildDate>
-  <item>
-    <title>Disclaimer | Mortgage Qualification Calc</title>
-    <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/disclaimer.html</link>
-    <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/disclaimer.html</guid>
-    <description>Disclaimer for the Mortgage Qualification Calc.</description>
-    <pubDate>Mon, 19 Oct 2026 02:53:43 +0000</pubDate>
-  </item>
-  <item>
-    <title>Privacy Policy | Mortgage Qualification Calc</title>
-    <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/privacy.html</link>
-    <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/privacy.html</guid>
-    <description>Privacy Policy for the Mortgage Qualification Calc.</description>
-    <pubDate>Mon, 19 Oct 2026 02:53:43 +0000</pubDate>
-  </item>
-  <item>
-    <title>Terms of Service | Mortgage Qualification Calc</title>
-    <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/terms.html</link>
-    <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/terms.html</guid>
-    <description>Terms of Service for the Mortgage Qualification Calc.</description>
-    <pubDate>Mon, 19 Oct 2026 02:53:43 +0000</pubDate>
-  </item>
-</channel>
+  <channel>
+    <title>Mortgage Qualification Calc</title>
+    <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/</link>
+    <description>Calculate home loan pre-approval limits, maximum home price, and payments.</description>
+    <language>en-us</language>
+    <atom:link href="https://us-mortgage-qualification-calc.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Oct 2026 03:21:30 GMT</lastBuildDate>
+    <item>
+      <title>$60k Income Mortgage Qualification Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/income-60k.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/income-60k.html</guid>
+      <description>Calculate maximum home price and PITI payment on a $60,000 household income.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>$80k Income Mortgage Qualification Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/income-80k.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/income-80k.html</guid>
+      <description>Estimate how much house you can afford on an $80,000 annual household income.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>$100k Income Mortgage Pre-Approval Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/income-100k.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/income-100k.html</guid>
+      <description>Calculate maximum home purchase price and loan limit on a $100,000 income.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>$120k Income Mortgage Pre-Approval Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/income-120k.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/income-120k.html</guid>
+      <description>See maximum qualifying home price, PITI, and 28/36 DTI limits at $120k income.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>$150k Income Mortgage Pre-Approval Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/income-150k.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/income-150k.html</guid>
+      <description>Estimate your maximum mortgage loan pre-approval and home price at $150k income.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>$200k Income Mortgage Pre-Approval Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/income-200k.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/income-200k.html</guid>
+      <description>Calculate maximum home buying power and 20% down PMI waiver on $200,000 income.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>FHA 31/43 vs Conventional 28/36 DTI Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/fha-vs-conventional.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/fha-vs-conventional.html</guid>
+      <description>Compare FHA (31/43 DTI) and Conventional (28/36 DTI) mortgage pre-approval.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>VA Loan Qualification Calc (41% DTI)</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/va-loan-qualification.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/va-loan-qualification.html</guid>
+      <description>Calculate $0 down VA mortgage qualification limits using the 41% DTI benchmark.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>28/36 Mortgage DTI Rule Calculator 2026</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/guide-28-36-dti-rule.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/guide-28-36-dti-rule.html</guid>
+      <description>Calculate front-end (28%) and back-end (36%) debt-to-income mortgage limits.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>20% Down Payment &amp; PMI Waiver Calculator</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/guide-20-down-pmi.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/guide-20-down-pmi.html</guid>
+      <description>See how a 20% down payment eliminates PMI and boosts mortgage buying power.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>Disclaimer | Mortgage Qualification Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/disclaimer.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/disclaimer.html</guid>
+      <description>Disclaimer policy for Mortgage Qualification Calc.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>Privacy | Mortgage Qualification Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/privacy.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/privacy.html</guid>
+      <description>Privacy policy for Mortgage Qualification Calc.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>Terms | Mortgage Qualification Calc</title>
+      <link>https://us-mortgage-qualification-calc.enjoy-onepage.com/terms.html</link>
+      <guid isPermaLink="true">https://us-mortgage-qualification-calc.enjoy-onepage.com/terms.html</guid>
+      <description>Terms policy for Mortgage Qualification Calc.</description>
+      <pubDate>Mon, 26 Oct 2026 03:21:30 GMT</pubDate>
+    </item>
+  </channel>
 </rss>
